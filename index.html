@@ -412,7 +412,7 @@ function buildICS(person, periodText){
     if (s.kind === 'shift'){
       L.push('DTSTART;TZID=Australia/Sydney:' + icsDate(s.date) + 'T' + s.start + '00');
       L.push('DTEND;TZID=Australia/Sydney:' + icsDate(s.date) + 'T' + s.end + '00');
-      L.push('SUMMARY:' + icsEsc('Work - ' + (s.timing || s.code) + ' - ' + s.duty));
+      L.push('SUMMARY:' + icsEsc('Work - ' + (s.timing || s.code) + ' (' + s.duty + ')'));
       L.push('DESCRIPTION:' + icsEsc('Shift code: ' + s.code + '\nDuty: ' + s.duty + '\nTime: ' + s.start + '-' + s.end + '\nRoster: ' + periodText));
       L.push('LOCATION:' + icsEsc('1 Chalmers Crescent, Mascot NSW 2020, Australia'));
     } else {
